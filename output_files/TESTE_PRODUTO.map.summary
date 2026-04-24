@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Apr 24 11:58:16 2026
+Analysis & Synthesis Status : Failed - Fri Apr 24 14:35:58 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : TESTE_PRODUTO
 Top-level Entity Name : execucao_produto
 Family : Cyclone IV E
-Total logic elements : 18,828
-    Total combinational functions : 18,826
-    Dedicated logic registers : 171
-Total registers : 171
-Total pins : 52
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 4
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

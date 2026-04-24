@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TESTE_PRODUTO
-Fri Apr 24 11:58:16 2026
+Fri Apr 24 14:35:58 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,22 +10,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |execucao_produto|DFT:inst|sm
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: DFT:inst|produto_modulo:multiplier_dft_sin|lpm_mult:u_mult
- 14. Parameter Settings for User Entity Instance: DFT:inst|produto_modulo:multiplier_dft_cos|lpm_mult:u_mult
- 15. Parameter Settings for Inferred Entity Instance: DFT:inst|lpm_add_sub:op_3
- 16. Parameter Settings for Inferred Entity Instance: DFT:inst|lpm_add_sub:op_7
- 17. lpm_mult Parameter Settings by Entity Instance
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -52,20 +37,20 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 24 11:58:16 2026           ;
+; Analysis & Synthesis Status        ; Failed - Fri Apr 24 14:35:58 2026               ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; TESTE_PRODUTO                                   ;
 ; Top-level Entity Name              ; execucao_produto                                ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 18,828                                          ;
-;     Total combinational functions  ; 18,826                                          ;
-;     Dedicated logic registers      ; 171                                             ;
-; Total registers                    ; 171                                             ;
-; Total pins                         ; 52                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 4                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -164,391 +149,11 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
-+----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; luts_sin.v                       ; yes             ; User Verilog HDL File                       ; /home/montrel/TESTE_PRODUTO/luts_sin.v                                                    ;         ;
-; simulated_data_ram.v             ; yes             ; User Verilog HDL File                       ; /home/montrel/TESTE_PRODUTO/simulated_data_ram.v                                          ;         ;
-; luts_cos.v                       ; yes             ; User Verilog HDL File                       ; /home/montrel/TESTE_PRODUTO/luts_cos.v                                                    ;         ;
-; DFT.tdf                          ; yes             ; User AHDL File                              ; /home/montrel/TESTE_PRODUTO/DFT.tdf                                                       ;         ;
-; tx_serial_32.v                   ; yes             ; User Verilog HDL File                       ; /home/montrel/TESTE_PRODUTO/tx_serial_32.v                                                ;         ;
-; execucao_produto.bdf             ; yes             ; User Block Diagram/Schematic File           ; /home/montrel/TESTE_PRODUTO/execucao_produto.bdf                                          ;         ;
-; produto_modulo.v                 ; yes             ; User Verilog HDL File                       ; /home/montrel/TESTE_PRODUTO/produto_modulo.v                                              ;         ;
-; sin.inc                          ; yes             ; Auto-Found AHDL File                        ; /home/montrel/TESTE_PRODUTO/sin.inc                                                       ;         ;
-; cos.inc                          ; yes             ; Auto-Found AHDL File                        ; /home/montrel/TESTE_PRODUTO/cos.inc                                                       ;         ;
-; produto_modulo.inc               ; yes             ; Auto-Found AHDL File                        ; /home/montrel/TESTE_PRODUTO/produto_modulo.inc                                            ;         ;
-; cos_7215_16bits.hex              ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/montrel/TESTE_PRODUTO/cos_7215_16bits.hex                                           ;         ;
-; sampled_signal.hex               ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/montrel/TESTE_PRODUTO/sampled_signal.hex                                            ;         ;
-; sin_7215_16bits.hex              ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/montrel/TESTE_PRODUTO/sin_7215_16bits.hex                                           ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; aglobal241.inc                   ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; db/mult_ppo.tdf                  ; yes             ; Auto-Generated Megafunction                 ; /home/montrel/TESTE_PRODUTO/db/mult_ppo.tdf                                               ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                                ; /home/montrel/altera_lite/24.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_pvi.tdf               ; yes             ; Auto-Generated Megafunction                 ; /home/montrel/TESTE_PRODUTO/db/add_sub_pvi.tdf                                            ;         ;
-+----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 18,828                      ;
-;                                             ;                             ;
-; Total combinational functions               ; 18826                       ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 17453                       ;
-;     -- 3 input functions                    ; 1138                        ;
-;     -- <=2 input functions                  ; 235                         ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 18742                       ;
-;     -- arithmetic mode                      ; 84                          ;
-;                                             ;                             ;
-; Total registers                             ; 171                         ;
-;     -- Dedicated logic registers            ; 171                         ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 52                          ;
-;                                             ;                             ;
-; Embedded Multiplier 9-bit elements          ; 4                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; DFT:inst|samples_counter[0] ;
-; Maximum fan-out                             ; 5172                        ;
-; Total fan-out                               ; 74448                       ;
-; Average fan-out                             ; 3.90                        ;
-+---------------------------------------------+-----------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name      ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |execucao_produto                         ; 18826 (0)           ; 171 (0)                   ; 0           ; 4            ; 0       ; 2         ; 52   ; 0            ; |execucao_produto                                                                                    ; execucao_produto ; work         ;
-;    |DFT:inst|                             ; 12126 (99)          ; 83 (83)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |execucao_produto|DFT:inst                                                                           ; DFT              ; work         ;
-;       |cos:cos_dft|                       ; 6342 (6342)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|cos:cos_dft                                                               ; cos              ; work         ;
-;       |lpm_add_sub:op_3|                  ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|lpm_add_sub:op_3                                                          ; lpm_add_sub      ; work         ;
-;          |add_sub_pvi:auto_generated|     ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|lpm_add_sub:op_3|add_sub_pvi:auto_generated                               ; add_sub_pvi      ; work         ;
-;       |lpm_add_sub:op_7|                  ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|lpm_add_sub:op_7                                                          ; lpm_add_sub      ; work         ;
-;          |add_sub_pvi:auto_generated|     ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|lpm_add_sub:op_7|add_sub_pvi:auto_generated                               ; add_sub_pvi      ; work         ;
-;       |produto_modulo:multiplier_dft_cos| ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_cos                                         ; produto_modulo   ; work         ;
-;          |lpm_mult:u_mult|                ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_cos|lpm_mult:u_mult                         ; lpm_mult         ; work         ;
-;             |mult_ppo:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_cos|lpm_mult:u_mult|mult_ppo:auto_generated ; mult_ppo         ; work         ;
-;       |produto_modulo:multiplier_dft_sin| ; 1 (1)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_sin                                         ; produto_modulo   ; work         ;
-;          |lpm_mult:u_mult|                ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_sin|lpm_mult:u_mult                         ; lpm_mult         ; work         ;
-;             |mult_ppo:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |execucao_produto|DFT:inst|produto_modulo:multiplier_dft_sin|lpm_mult:u_mult|mult_ppo:auto_generated ; mult_ppo         ; work         ;
-;       |sin:sin_dft|                       ; 5620 (5620)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|DFT:inst|sin:sin_dft                                                               ; sin              ; work         ;
-;    |ram_data:inst8|                       ; 6587 (6587)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|ram_data:inst8                                                                     ; ram_data         ; work         ;
-;    |tx_serial_32:inst2|                   ; 76 (76)             ; 55 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|tx_serial_32:inst2                                                                 ; tx_serial_32     ; work         ;
-;    |tx_serial_32:inst3|                   ; 37 (37)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execucao_produto|tx_serial_32:inst3                                                                 ; tx_serial_32     ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary        ;
-+---------------------------------------+-------------+
-; Statistic                             ; Number Used ;
-+---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 2           ;
-; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 4           ;
-; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 2           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
-; Variable Sign Embedded Multipliers    ; 0           ;
-; Dedicated Input Shift Register Chains ; 0           ;
-+---------------------------------------+-------------+
-Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------+
-; State Machine - |execucao_produto|DFT:inst|sm                  ;
-+--------------+--------------+-----------+-----+---------+------+
-; Name         ; await_end_tx ; check_end ; sum ; product ; idle ;
-+--------------+--------------+-----------+-----+---------+------+
-; idle         ; 0            ; 0         ; 0   ; 0       ; 0    ;
-; product      ; 0            ; 0         ; 0   ; 1       ; 1    ;
-; sum          ; 0            ; 0         ; 1   ; 0       ; 1    ;
-; check_end    ; 0            ; 1         ; 0   ; 0       ; 1    ;
-; await_end_tx ; 1            ; 0         ; 0   ; 0       ; 1    ;
-+--------------+--------------+-----------+-----+---------+------+
-
-
-+--------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                         ;
-+----------------------------------------+---------------------------------------------------+
-; Register name                          ; Reason for Removal                                ;
-+----------------------------------------+---------------------------------------------------+
-; tx_serial_32:inst3|done                ; Merged with tx_serial_32:inst2|done               ;
-; tx_serial_32:inst3|bit_cnt[3]          ; Merged with tx_serial_32:inst2|bit_cnt[3]         ;
-; tx_serial_32:inst3|bit_cnt[2]          ; Merged with tx_serial_32:inst2|bit_cnt[2]         ;
-; tx_serial_32:inst3|bit_cnt[1]          ; Merged with tx_serial_32:inst2|bit_cnt[1]         ;
-; tx_serial_32:inst3|bit_cnt[0]          ; Merged with tx_serial_32:inst2|bit_cnt[0]         ;
-; tx_serial_32:inst3|done_start          ; Merged with tx_serial_32:inst2|done_start         ;
-; tx_serial_32:inst3|busy                ; Merged with tx_serial_32:inst2|busy               ;
-; tx_serial_32:inst3|stop_on             ; Merged with tx_serial_32:inst2|stop_on            ;
-; tx_serial_32:inst3|tx_freq_divider[9]  ; Merged with tx_serial_32:inst2|tx_freq_divider[9] ;
-; tx_serial_32:inst3|tx_freq_divider[8]  ; Merged with tx_serial_32:inst2|tx_freq_divider[8] ;
-; tx_serial_32:inst3|tx_freq_divider[6]  ; Merged with tx_serial_32:inst2|tx_freq_divider[6] ;
-; tx_serial_32:inst3|tx_freq_divider[5]  ; Merged with tx_serial_32:inst2|tx_freq_divider[5] ;
-; tx_serial_32:inst3|tx_freq_divider[2]  ; Merged with tx_serial_32:inst2|tx_freq_divider[2] ;
-; tx_serial_32:inst3|tx_freq_divider[7]  ; Merged with tx_serial_32:inst2|tx_freq_divider[7] ;
-; tx_serial_32:inst3|tx_freq_divider[4]  ; Merged with tx_serial_32:inst2|tx_freq_divider[4] ;
-; tx_serial_32:inst3|tx_freq_divider[3]  ; Merged with tx_serial_32:inst2|tx_freq_divider[3] ;
-; tx_serial_32:inst3|tx_freq_divider[1]  ; Merged with tx_serial_32:inst2|tx_freq_divider[1] ;
-; tx_serial_32:inst3|tx_freq_divider[0]  ; Merged with tx_serial_32:inst2|tx_freq_divider[0] ;
-; tx_serial_32:inst3|count_byte[2]       ; Merged with tx_serial_32:inst2|count_byte[2]      ;
-; tx_serial_32:inst3|count_byte[1]       ; Merged with tx_serial_32:inst2|count_byte[1]      ;
-; tx_serial_32:inst3|count_byte[0]       ; Merged with tx_serial_32:inst2|count_byte[0]      ;
-; tx_serial_32:inst3|loaded              ; Merged with tx_serial_32:inst2|loaded             ;
-; DFT:inst|start_tx_ff                   ; Merged with DFT:inst|await_end_tx                 ;
-; Total Number of Removed Registers = 23 ;                                                   ;
-+----------------------------------------+---------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 171   ;
-; Number of registers using Synchronous Clear  ; 78    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 83    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 81    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |execucao_produto|tx_serial_32:inst2|count_byte[0]      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |execucao_produto|tx_serial_32:inst3|shift_reg[31]      ;
-; 4:1                ; 62 bits   ; 124 LEs       ; 124 LEs              ; 0 LEs                  ; Yes        ; |execucao_produto|tx_serial_32:inst2|shift_reg[13]      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |execucao_produto|tx_serial_32:inst2|bit_cnt[2]         ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |execucao_produto|tx_serial_32:inst3|tx                 ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |execucao_produto|tx_serial_32:inst2|tx_freq_divider[9] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DFT:inst|produto_modulo:multiplier_dft_sin|lpm_mult:u_mult ;
-+------------------------------------------------+--------------+-----------------------------------------+
-; Parameter Name                                 ; Value        ; Type                                    ;
-+------------------------------------------------+--------------+-----------------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                          ;
-; LPM_WIDTHA                                     ; 16           ; Signed Integer                          ;
-; LPM_WIDTHB                                     ; 16           ; Signed Integer                          ;
-; LPM_WIDTHP                                     ; 32           ; Signed Integer                          ;
-; LPM_WIDTHR                                     ; 0            ; Untyped                                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                 ;
-; LPM_PIPELINE                                   ; 1            ; Signed Integer                          ;
-; LATENCY                                        ; 0            ; Untyped                                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                 ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                 ;
-; USE_EAB                                        ; OFF          ; Untyped                                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                 ;
-; CBXI_PARAMETER                                 ; mult_ppo     ; Untyped                                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                 ;
-+------------------------------------------------+--------------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DFT:inst|produto_modulo:multiplier_dft_cos|lpm_mult:u_mult ;
-+------------------------------------------------+--------------+-----------------------------------------+
-; Parameter Name                                 ; Value        ; Type                                    ;
-+------------------------------------------------+--------------+-----------------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                          ;
-; LPM_WIDTHA                                     ; 16           ; Signed Integer                          ;
-; LPM_WIDTHB                                     ; 16           ; Signed Integer                          ;
-; LPM_WIDTHP                                     ; 32           ; Signed Integer                          ;
-; LPM_WIDTHR                                     ; 0            ; Untyped                                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                 ;
-; LPM_PIPELINE                                   ; 1            ; Signed Integer                          ;
-; LATENCY                                        ; 0            ; Untyped                                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                 ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                 ;
-; USE_EAB                                        ; OFF          ; Untyped                                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                 ;
-; CBXI_PARAMETER                                 ; mult_ppo     ; Untyped                                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                 ;
-+------------------------------------------------+--------------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: DFT:inst|lpm_add_sub:op_3 ;
-+------------------------+--------------+------------------------------------+
-; Parameter Name         ; Value        ; Type                               ;
-+------------------------+--------------+------------------------------------+
-; LPM_WIDTH              ; 32           ; Untyped                            ;
-; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                            ;
-; LPM_DIRECTION          ; DEFAULT      ; Untyped                            ;
-; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                            ;
-; LPM_PIPELINE           ; 0            ; Untyped                            ;
-; MAXIMIZE_SPEED         ; 5            ; Untyped                            ;
-; REGISTERED_AT_END      ; 0            ; Untyped                            ;
-; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                            ;
-; USE_CS_BUFFERS         ; 1            ; Untyped                            ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                            ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                 ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                            ;
-; USE_WYS                ; OFF          ; Untyped                            ;
-; STYLE                  ; FAST         ; Untyped                            ;
-; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                            ;
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                         ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                       ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                       ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                     ;
-+------------------------+--------------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: DFT:inst|lpm_add_sub:op_7 ;
-+------------------------+--------------+------------------------------------+
-; Parameter Name         ; Value        ; Type                               ;
-+------------------------+--------------+------------------------------------+
-; LPM_WIDTH              ; 32           ; Untyped                            ;
-; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                            ;
-; LPM_DIRECTION          ; DEFAULT      ; Untyped                            ;
-; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                            ;
-; LPM_PIPELINE           ; 0            ; Untyped                            ;
-; MAXIMIZE_SPEED         ; 5            ; Untyped                            ;
-; REGISTERED_AT_END      ; 0            ; Untyped                            ;
-; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                            ;
-; USE_CS_BUFFERS         ; 1            ; Untyped                            ;
-; CARRY_CHAIN            ; MANUAL       ; Untyped                            ;
-; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                 ;
-; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                            ;
-; USE_WYS                ; OFF          ; Untyped                            ;
-; STYLE                  ; FAST         ; Untyped                            ;
-; CBXI_PARAMETER         ; add_sub_pvi  ; Untyped                            ;
-; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                         ;
-; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                       ;
-; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                       ;
-; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                     ;
-+------------------------+--------------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                                     ;
-+---------------------------------------+------------------------------------------------------------+
-; Name                                  ; Value                                                      ;
-+---------------------------------------+------------------------------------------------------------+
-; Number of entity instances            ; 2                                                          ;
-; Entity Instance                       ; DFT:inst|produto_modulo:multiplier_dft_sin|lpm_mult:u_mult ;
-;     -- LPM_WIDTHA                     ; 16                                                         ;
-;     -- LPM_WIDTHB                     ; 16                                                         ;
-;     -- LPM_WIDTHP                     ; 32                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                                         ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-; Entity Instance                       ; DFT:inst|produto_modulo:multiplier_dft_cos|lpm_mult:u_mult ;
-;     -- LPM_WIDTHA                     ; 16                                                         ;
-;     -- LPM_WIDTHB                     ; 16                                                         ;
-;     -- LPM_WIDTHP                     ; 32                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                                         ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-+---------------------------------------+------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 171                         ;
-;     CLR               ; 83                          ;
-;     ENA               ; 8                           ;
-;     ENA SCLR          ; 73                          ;
-;     SCLR              ; 5                           ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 18826                       ;
-;     arith             ; 84                          ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 64                          ;
-;     normal            ; 18742                       ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 211                         ;
-;         3 data inputs ; 1074                        ;
-;         4 data inputs ; 17453                       ;
-; cycloneiii_mac_mult   ; 2                           ;
-; cycloneiii_mac_out    ; 2                           ;
-;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 8.19                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:05:08     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -557,7 +162,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Apr 24 11:52:54 2026
+    Info: Processing started: Fri Apr 24 14:35:45 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TESTE_PRODUTO -c TESTE_PRODUTO
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -603,35 +208,12 @@ Warning (10030): Net "cossine_lut.data_a" at luts_cos.v(6) has no driver or init
 Warning (10030): Net "cossine_lut.waddr_a" at luts_cos.v(6) has no driver or initial value, using a default initial value '0' File: /home/montrel/TESTE_PRODUTO/luts_cos.v Line: 6
 Warning (10030): Net "cossine_lut.we_a" at luts_cos.v(6) has no driver or initial value, using a default initial value '0' File: /home/montrel/TESTE_PRODUTO/luts_cos.v Line: 6
 Info (12128): Elaborating entity "ram_data" for hierarchy "ram_data:inst8"
-Warning (10030): Net "data.data_a" at simulated_data_ram.v(7) has no driver or initial value, using a default initial value '0' File: /home/montrel/TESTE_PRODUTO/simulated_data_ram.v Line: 7
-Warning (10030): Net "data.waddr_a" at simulated_data_ram.v(7) has no driver or initial value, using a default initial value '0' File: /home/montrel/TESTE_PRODUTO/simulated_data_ram.v Line: 7
-Warning (10030): Net "data.we_a" at simulated_data_ram.v(7) has no driver or initial value, using a default initial value '0' File: /home/montrel/TESTE_PRODUTO/simulated_data_ram.v Line: 7
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7216) in the Memory Initialization File "/home/montrel/TESTE_PRODUTO/db/TESTE_PRODUTO.ram0_ram_data_bd6207e.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7216) in the Memory Initialization File "/home/montrel/TESTE_PRODUTO/db/TESTE_PRODUTO.ram0_sin_1d845.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7216) in the Memory Initialization File "/home/montrel/TESTE_PRODUTO/db/TESTE_PRODUTO.ram0_cos_19890.hdl.mif" -- setting initial value for remaining addresses to 0
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "DFT:inst|op_3"
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "DFT:inst|op_7"
-Info (12130): Elaborated megafunction instantiation "DFT:inst|lpm_add_sub:op_3"
-Info (12133): Instantiated megafunction "DFT:inst|lpm_add_sub:op_3" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "32"
-    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_pvi.tdf
-    Info (12023): Found entity 1: add_sub_pvi File: /home/montrel/TESTE_PRODUTO/db/add_sub_pvi.tdf Line: 23
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 18886 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 48 output pins
-    Info (21061): Implemented 18830 logic cells
-    Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Fri Apr 24 11:58:17 2026
-    Info: Elapsed time: 00:05:23
-    Info: Total CPU time (on all processors): 00:05:41
+Error (10054): Verilog HDL File I/O error at simulated_data_ram.v(10): can't open Verilog Design File "sampled_signal.hex" File: /home/montrel/TESTE_PRODUTO/simulated_data_ram.v Line: 10
+Error (12152): Can't elaborate user hierarchy "ram_data:inst8"
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 11 warnings
+    Error: Peak virtual memory: 375 megabytes
+    Error: Processing ended: Fri Apr 24 14:35:58 2026
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:32
 
 

@@ -1,0 +1,152 @@
+include "sin.inc";
+include "cos.inc";
+include "produto_modulo.inc";
+
+subdesign DFT(
+           
+	 clk: input;
+	 reset: input;
+	 read_sample[15..0]: input;
+	 next_sample: input;	 
+	 start_dft: input;
+	 end_tx: input;
+	 
+	 sin_out[31..0]: output;
+	 cos_out[31..0]: output;
+	 
+	 start_tx: output;
+	 
+	 output_samples_counter[12..0]: output;
+	 
+)
+
+variable
+sm: machine with states(idle, product, sum, check_end, await_end_tx);
+
+samples_counter[12..0], start_tx_ff, clean_counter_ff: dff;
+
+multiplier_dft_sin, multiplier_dft_cos : produto_modulo;
+
+acc_sin[31..0], acc_cos[31..0]: dff;
+
+sin_dft: sin;
+cos_dft: cos;
+
+
+begin
+
+    defaults
+		  
+		  multiplier_dft_sin.product_on = Gnd;
+		  multiplier_dft_cos.product_on = Gnd;
+		  
+		  acc_sin[].clrn = Vcc;
+		  acc_cos[].clrn = Vcc;
+		  
+		  start_tx_ff.d = Gnd;
+		  
+		  clean_counter_ff.d = Vcc;
+		
+	 end defaults;
+	 
+	 --Clean counter
+	 clean_counter_ff.clk = clk;
+	 clean_counter_ff.clrn = !reset;
+	 
+    --Counter of samples
+    samples_counter[].clk = next_sample;
+	 samples_counter[].d = samples_counter[].q + 1;
+	 samples_counter[].clrn = !reset & !end_tx & clean_counter_ff.q;
+	 output_samples_counter = samples_counter[].q;
+	 
+	 --Inputs of state machine
+	 sm.clk = clk;
+	 sm.reset = reset;
+	 
+	 --Permanent connections of start_tx_ff
+	 start_tx_ff.clk = clk;
+	 start_tx_ff.clrn = !reset;
+	 start_tx = start_tx_ff.q;
+	 --Permanent connections of multipliers for sin and cos
+	 multiplier_dft_sin.clk = clk;
+	 multiplier_dft_cos.clk = clk;
+	 
+	 multiplier_dft_sin.reset = reset;
+	 multiplier_dft_cos.reset = reset;
+	 
+	 multiplier_dft_sin.data[] = read_sample[];
+	 multiplier_dft_cos.data[] = read_sample[];
+	 
+	 sin_dft.addr = samples_counter[].q;
+	 cos_dft.addr = samples_counter[].q;
+	 
+	 multiplier_dft_sin.luts[] = sin_dft.sine[];
+	 multiplier_dft_cos.luts[] = cos_dft.cossine[];
+	 
+	 --Acumulators
+	 acc_sin[].clk = next_sample;
+	 acc_cos[].clk = next_sample;
+	 
+	 --Appling 2 complement in negative regions of sine
+	 if samples_counter[].q <= 3608 then
+	     acc_sin[].d = acc_sin[].q + multiplier_dft_sin.dft_component[];
+	 else
+	     acc_sin[].d = acc_sin[].q - multiplier_dft_sin.dft_component[];
+	 end if;
+	 
+	 --Appling 2 complement in negative regions of cossine
+	 if samples_counter[].q <= 1804 # samples_counter[].q >= 5412 then
+	     acc_cos[].d = acc_cos[].q + multiplier_dft_cos.dft_component[];
+	 else 
+	     acc_cos[].d = acc_cos[].q - multiplier_dft_cos.dft_component[];
+	 end if;
+	 
+    sin_out[]= acc_sin[];
+	 cos_out[]= acc_cos[];
+   	
+	 
+	 case sm is
+        when idle =>
+		  
+		  if !start_dft then
+		      
+		  	   sm = idle;
+		  else
+				multiplier_dft_sin.product_on = Vcc;
+		      multiplier_dft_cos.product_on = Vcc;
+				sm = product;
+		  end if;
+			
+		  when product =>
+		  	      
+				sm = sum;
+				
+        when sum =>
+		  	      
+				sm = check_end;
+				
+        when check_end =>
+		  	     
+				if samples_counter[] == 7215 then
+				    start_tx_ff.d = Vcc;
+					 sm = await_end_tx;
+					 clean_counter_ff.d = Gnd;
+			   else
+				    sm = idle;
+			   end if;
+		      			 
+					 		 
+		 when await_end_tx =>
+		  	   if end_tx then
+				    acc_sin[].clrn = Gnd;
+		          acc_cos[].clrn = Gnd;
+				    sm = idle;	
+		      else
+				    sm = await_end_tx;
+					 start_tx_ff.d = Vcc;
+					 clean_counter_ff.d = Gnd;
+			   end if;
+		  
+	 end case;
+
+end;

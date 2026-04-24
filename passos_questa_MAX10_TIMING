@@ -1,0 +1,50 @@
+🧱 1. Abrir o Questa com o modelsim.ini correto
+vsim -modelsimini modelsim.ini
+
+✔ garante libs do Quartus (MAX10)
+
+🧹 2. Limpar e preparar library
+
+No Transcript:
+
+vdel -all -lib work
+vlib work
+vmap work work
+📚 3. Compilar bibliotecas (MAX10)
+vlog /home/montrel/altera_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v
+vlog /home/montrel/altera_lite/24.1std/quartus/eda/sim_lib/220model.v
+vlog /home/montrel/altera_lite/24.1std/quartus/eda/sim_lib/sgate.v
+vlog /home/montrel/altera_lite/24.1std/quartus/eda/sim_lib/altera_mf.v
+vlog /home/montrel/altera_lite/24.1std/quartus/eda/sim_lib/fiftyfivenm_atoms.v
+🔌 4. Compilar seu design (IMPORTANTE: escolha o .vo certo)
+
+👉 Para timing real, use o .vo correspondente ao .sdo
+
+Exemplo (pior caso):
+vlog TESTE_PRODUTO_8_1200mv_85c_slow.vo
+
+👉 E o testbench:
+
+vlog Waveform.vwf.vt
+⚡ 5. Rodar SIMULAÇÃO COM TIMING (ESSENCIAL)
+
+Agora o passo mais importante:
+
+vsim -voptargs="+acc" -t 1ps \
+-sdfmax /execucao_produto_vlg_vec_tst/i1=TESTE_PRODUTO_8_1200mv_85c_v_slow.sdo \
+work.execucao_produto_vlg_vec_tst
+📊 6. Abrir waveform
+view wave
+add wave -r *
+▶️ 7. Rodar simulação
+run -all
+
+
+
+simulação no questa sem sim
+vlog TESTE_PRODUTO.vo
+
+vsim -modelsimini modelsim.ini
+
+--extrai sinais escondidos
+vsim -voptargs=+acc work.execucao_produto_vlg_vec_tst
